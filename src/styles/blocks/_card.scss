@@ -1,0 +1,72 @@
+.card {
+
+  &__image {
+    width: 100%;
+    height: 356px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    object-fit: cover;
+    transition: transform $transitionTime;
+
+    @include  onTablet {
+      max-width: 100%;
+      height: auto;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__type {
+    @include uppercaseText;
+
+    margin-bottom: 8px;
+    color: $grey;
+  }
+
+  &__description {
+    color: $black;
+    margin-bottom: 24px;
+  }
+
+  &__order-link {
+    position: relative;
+    box-sizing: border-box;
+    @include uppercaseText;
+    text-decoration: none;
+    color: $accentOrange;
+    padding-left: 28px;
+    padding-bottom: 4px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 16px;
+      left: 0;
+      background-image: url(../images/icons/arrow.svg);
+
+      @include bgiFormat;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      height: 2px;
+      width: 100%;
+      transform: scaleX(0);
+      background-color: $accentOrange;
+      transition: all, $transitionTime;
+    }
+
+    &:hover {
+      border-color: $accentOrange;
+      &::after {
+        transform: scaleX(100%);
+      }
+    }
+  }
+}

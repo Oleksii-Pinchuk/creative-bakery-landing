@@ -1,0 +1,61 @@
+.page {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+
+  scroll-behavior: smooth;
+
+  .page__body--with-menu {
+    overflow: hidden;
+  }
+
+  &__body {
+    margin: 0;
+    background: $lightBlue;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: transform $transitionTime;
+    transform: translatex(100%);
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &:target {
+      transform: translatex(0);
+    }
+  }
+
+  &__products {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 160px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 186px;
+    }
+  }
+
+  &__about {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 56px;
+    }
+  }
+}

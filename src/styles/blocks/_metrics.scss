@@ -1,0 +1,16 @@
+.metrics {
+
+  &__value {
+    font-size: 96px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $accentOrange;
+
+    margin-bottom: 8px;
+  }
+
+  &__name {
+    color: $black;
+  }
+}

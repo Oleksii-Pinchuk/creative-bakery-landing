@@ -1,0 +1,40 @@
+.button {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 56px;
+  border: 2px solid $accentOrange;
+  border-radius: 32px;
+
+  text-decoration: none;
+  @include uppercaseText;
+  color: $accentOrange;
+  cursor: pointer;
+  transition: all $transitionTime;
+
+  &:hover {
+    color: $white;
+    background-color: $accentOrange;
+  }
+
+  &:focus {
+    border-color: $darkOrange;
+    background-color: $darkOrange;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/icons/cookies.svg);
+    margin-right: 6px;
+    transition: all $transitionTime;
+  }
+
+  &:hover &__icon,
+  &:focus &__icon {
+    background-image: url(../images/icons/cookies-white.svg);
+  }
+}

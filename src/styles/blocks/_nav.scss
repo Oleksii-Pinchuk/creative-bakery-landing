@@ -1,0 +1,78 @@
+.nav {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+  }
+
+  @include onDesktopLarge {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 64px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--contact-us {
+      position: relative;
+    }
+  }
+
+  &__link {
+    position: relative;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding-bottom: 4px;
+    @include uppercaseText;
+    color: $black;
+    transition: all, $transitionTime;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      height: 2px;
+      width: 100%;
+      transform: scaleX(0);
+      background-color: $accentOrange;
+      transition: all, $transitionTime;
+    }
+
+    &:hover {
+      color: $accentOrange;
+      &::after {
+        transform: scaleX(100%);
+      }
+    }
+
+    &--contact-us {
+      padding-left: 25px;
+      color: $accentOrange;
+
+      &:hover {
+        border-color: $accentOrange;
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 18px;
+        height: 100%;
+        left: 0;
+        @include bgiFormat;
+        background-image: url(../images/icons/phone.svg);
+      }
+    }
+  }
+}
